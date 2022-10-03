@@ -1,0 +1,7 @@
+const Inventory = require("../models/Inventory");
+const list = async (request, response) => {
+  const data = await Inventory.find({ size: { h: 14, w: 21, uom: "cm" } });
+  console.log(data);
+  response.json({ data });
+};
+module.exports = { list };
